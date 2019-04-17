@@ -1,3 +1,5 @@
+#include "Node.h"
+#include <iostream>
 using namespace std;
 
 class Node {
@@ -33,8 +35,14 @@ class Node {
       return *next;
     };
 */
+    void printList(Node *head) {
+      while (head->getNext() != nullptr) {
+        cout << "| " << head->getData() << " | -> ";
+      }
+    };
 
-  public:
-    int data;
-    Node *next;
+
+
+
+  
 };

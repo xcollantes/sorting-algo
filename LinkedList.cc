@@ -1,8 +1,19 @@
+/** 
+* @author Xavier Collantes
+* @purpose Build a linked list and print out its 
+* contents. 
+*/
 
-#include "Node.cc"
+#include "Node.h"
 #include <iostream>
 using namespace std;
 
+
+void printList(Node head) {
+  while (head->getNext() != NULL) {
+    cout << "| " << head->getData() << " | -> ";
+  }
+}
 
 
 int main(){
@@ -10,16 +21,26 @@ int main(){
   
   Node *head = new Node();
   Node *second = new Node();
+  Node *third = new Node();
+
+
   cout << "Assigning Nodes." << endl;
-  head->data = 100;
-  head->next = NULL;
+  
+  head->setData(100);
+  head->setNext(second);
+  second->setData(200);
+  second->setNext(third);
+  third->setData(300);
+  third->setNext(NULL);
+
 
   cout << "Printing Nodes." << endl;
-  cout << head->data << endl;
-  cout << head->next << endl;
+  printList(head);
 
-  cout << "Printing Node Address." << endl;
-  cout << head->data << endl;
-  cout << head->next << endl;
   return 0;
 }
+
+
+
+
+
